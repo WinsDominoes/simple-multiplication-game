@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication problems</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    
+        html, body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        input {
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+        }
+
+        .question {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        .no-outline:focus {
+            outline: none;
+        }
+
+        #answer {
+            font-family: 'Roboto', sans-serif;
+            width: 300px; 
+            font-size: 10vw; 
+            vertical-align: middle; 
+            margin-bottom: 20px;
+            padding: 0px;
+        }
+
+    </style> 
+    
+</head>
+<body>
+    <div class="question">
+        <span style="font-size: 10vw;"><span id="number1">0</span> x <span id="number2">0</span> = <input type="number" name="answer" id="answer" class="no-outline"></span> 
+        <button type="button" onclick="check()" id="check" style="display: none;">Check</button>
+
+        <div align="center">
+            <h1 id="result"></h1>
+        </div>
+    </div>
+    <script>
+        var checkButton = document.getElementById("answer");
+
+        // Execute a function when the user releases a key on the keyboard
+        checkButton.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Trigger the button element with a click
+            document.getElementById("check").click();
+        }
+        }); 
+    </script>
+
+    <script src="number.js"></script>
+</body>
+</html>
